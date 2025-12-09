@@ -1,0 +1,24 @@
+env:
+  database: postgres
+  pg_host: postgres-new.kong.svc.cluster.local
+  pg_port: 5432
+  pg_user: kong
+  pg_password: kong
+  pg_database: kong
+
+postgresql:
+  enabled: false
+image:
+  repository: kong/kong-gateway
+  tag: "3.4"
+
+ingressController:
+  enabled: false
+
+admin:
+  enabled: true
+  type: ClusterIP
+
+proxy:
+  enabled: true
+  type: NodePort
